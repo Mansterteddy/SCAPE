@@ -1,6 +1,13 @@
+#The function that translates rotation matrix into twist, from Ma Yi An invitation to 3D Vision
+
 import numpy as np
 import math
 
+'''
+Input: 3 * 3 Rotation Matrix
+
+Output: 3 * 1 Twist vector
+'''
 def rotation2twist(matrix_m):
     mid_theta = (np.trace(matrix_m) - 1) / 2
     theta = math.acos(mid_theta)

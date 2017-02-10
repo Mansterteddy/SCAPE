@@ -1,6 +1,11 @@
+#Function that read corresponding file, return list data structure
+
 import csv
 import numpy as np
 
+'''
+Read whole.txt file.
+'''
 def handle_whole(file):
     csv_reader = csv.reader(open(file))
     res = []
@@ -15,6 +20,9 @@ def handle_whole(file):
 
     return np.array(res)
 
+'''
+Read tri.txt file.
+'''
 def handle_tri(file):
     csv_reader = csv.reader(open(file))
     res = []
@@ -29,6 +37,9 @@ def handle_tri(file):
 
     return res
 
+'''
+Read tripart.txt file.
+'''
 def handle_tripart(file):
     csv_reader = csv.reader(open(file))
     res = []
@@ -37,6 +48,9 @@ def handle_tripart(file):
 
     return res
 
+'''
+Read .obj file.
+'''
 def handle_obj(file):
     csv_reader = csv.reader(open(file))
     res = []
@@ -53,6 +67,9 @@ def handle_obj(file):
             pass
     return np.array(res)
 
+'''
+Read files like lefthand.txt.
+'''
 def handle_txt(i):
     segname = {1: "lefthand", 2: "lowerarm", 3: "uparm", 4: "righthand", 5: "rightlowarm", 6: "rightuparm",
                7: "leftfoot", 8: "leftlowleg", 9: "leftupleg",
@@ -64,6 +81,9 @@ def handle_txt(i):
         res.append(int(row[0].split(' ')[0]) - 1)
     return res
 
+'''
+Template of read file.
+'''
 def handle(file):
     csv_reader = csv.reader(open(file))
     res = []

@@ -4,6 +4,8 @@ def procrustes(X, Y, scaling=True, reflection='best'):
     """
     A port of MATLAB's `procrustes` function to Numpy.
 
+    The core trick is using SVD.
+
     Procrustes analysis determines a linear transformation (translation,
     reflection, orthogonal rotation and scaling) of the points in Y to best
     conform them to the points in matrix X, using the sum of squared errors

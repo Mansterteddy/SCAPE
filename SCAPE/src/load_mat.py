@@ -1,5 +1,6 @@
+#Function that read matlab .mat file
+
 import scipy.io as sio
-import types
 import numpy as np
 
 def load_mat():

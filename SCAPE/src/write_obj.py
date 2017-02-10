@@ -1,11 +1,29 @@
 import csv
 
-def write_obj_test():
-    f = open("D:/Data Python/SCAPE/res/1.obj", 'w')
+def write_obj(final_point, tri):
+    f = open("D:/Data Python/SCAPE/res/res1.obj", 'w')
     f.write('v 0 0 0\n')
-    f.write('v 100 100 100\n')
+    count = 0
+    for row in final_point:
+        if(count == 0):
+            str_res = 'v ' + str(row)
+            f.write(str_res)
+            count += 1
+        elif(count == 1):
+            str_res = ' ' + str(row)
+            f.write(str_res)
+            count += 1
+        else:
+            str_res = ' '+ str(row) + '\n'
+            f.write(str_res)
+            count = 0
+
+    for row in tri:
+        str_res = 'f ' + str(row[0]) + ' ' + str(row[1]) + ' ' + str(row[2]) + '\n'
+        f.write(str_res)
+
     f.close()
-    print 'Done'
+
 
 def write_obj_res():
     csv_reader = csv.reader(open("D:/Data Python/SCAPE/res/res.txt"))
@@ -32,19 +50,6 @@ def write_obj_res():
         f2.write(str)
 
     f2.close()
-
-def write_obj(x, tri):
-    f = open("D:/Data Python/SCAPE/res/res1.obj", 'w')
-    f.write('v 0 0 0\n')
-    for i in xrange(len(x)):
-        str = 'v ' + str(x[i][0]) + ' ' + str(x[i][1]) + ' ' + str(x[i][2]) + '\n'
-        f.write(str)
-    for i in xrange(len(tri)):
-        str = 'f ' + str(tri[i][0]) + ' ' + str(tri[i][1]) + ' ' + str(tri[i][2]) + '\n'
-        f.write(str)
-
-    f.close()
-
 
 if __name__ == '__main__':
     write_obj_res()
