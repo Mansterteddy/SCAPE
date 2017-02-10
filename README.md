@@ -17,6 +17,8 @@
 
 
 
+This repository includes the implementation of SCAPE: Shape Completion and Animation of People using python. I didn't provide a good document to explain the program. If you want to know more, please feel free to contact me.
+
 
 
 
