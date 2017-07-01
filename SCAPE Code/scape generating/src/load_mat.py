@@ -5,12 +5,12 @@ import numpy as np
 
 def load_mat():
     #mat_contents = sio.loadmat("D:/matlab_code/scapecode/trainS1.mat")
-    mat_contents = sio.loadmat("../bin/train.mat")
+    mat_contents = sio.loadmat("../bin/train_2.mat")
     return mat_contents
 
 def load_mat_pose_mode():
     #mat_contents = sio.loadmat("D:/matlab_code/scapecode/trainS1.mat")
-    mat_contents = sio.loadmat("../bin/train.mat")
+    mat_contents = sio.loadmat("../bin/train_2.mat")
     pose_model = mat_contents['pose_model']
     pose_model_sub = pose_model[0:9]
     test = np.array([1, 1, 1, 1, 1, 1, 1])

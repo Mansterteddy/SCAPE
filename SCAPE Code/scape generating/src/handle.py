@@ -55,10 +55,11 @@ def handle_obj(file):
     csv_reader = csv.reader(open(file))
     res = []
     for row in csv_reader:
-        if(row[0][0] == 'v'):
+        # Handle vt and vn
+        if(row[0][0] == 'v' and row[0][1] == ' '):
             res_son = []
             for item in row[0].split(' '):
-                if(item == 'v'):
+                if(item == 'v' or item == ''):
                     pass
                 else:
                     res_son.append(float(item))

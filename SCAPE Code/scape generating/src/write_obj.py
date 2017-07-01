@@ -3,7 +3,7 @@ import csv
 def write_obj(final_point, tri):
     #f = open("D:/Data Python/SCAPE/res/res1.obj", 'w')
     f = open("../res/res1.obj", 'w')
-    f.write('v 0 0 0\n')
+    #f.write('v 0 0 0\n')
     count = 0
     for row in final_point:
         if(count == 0):

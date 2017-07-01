@@ -103,8 +103,8 @@ def scape_trans():
     print "Mesh Q time", time.clock()
 
     #设定参数，生成对应的S矩阵，主要就是调节主对角线元素大小
-    eigen_value_mat = np.zeros((66, 1))
-    eigen_value_mat[0][0] = math.sqrt(eigen_value[0][0]) * (0.3)
+    eigen_value_mat = np.zeros((72, 1))
+    eigen_value_mat[0][0] = math.sqrt(eigen_value[0][0]) * (+0.2)
     mesh_S = np.dot(U, eigen_value_mat) + amu.T
     mesh_S = np.resize(mesh_S, (3 * trinum, 3))
 
